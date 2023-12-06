@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log</title>
+    <link rel="stylesheet" href="./public/styles.css">
+
+</head>
+
+<body>
+    <div class="append">
+        <input id=date type="date"  min="2023-12-05" style="width: 120px;">
+        <textarea id=daylog class="daylog" placeholder="Here you can write down what happened"></textarea>
+        <button class="button-61" id="btnappend">Memorize</button>
+    </div>
+    <script >
+
+        btnappend.onclick = function () { 
+           var helpstr = localStorage.getItem("log2023");
+            helpstr += "<h2>"+date.value+"</h2>"+"<p>"+daylog.value+"</p>";
+            localStorage.setItem("log2023", helpstr );
+           /*  alert(date.value);*/
+            window.location = "index.html";
+
+        }
+        window.onload = function () {
+            var today = new Date();
+            var day = today.getDate();
+            if(day<10){
+                day = "0"+day;
+            }
+            date.value = today.getFullYear()+"-"+today.getMonth()+"-"+day;
+            
+        };
+    </script>
+</body>
+
+</html>

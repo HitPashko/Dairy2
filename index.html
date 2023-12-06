@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy</title>
+    <link rel="stylesheet" href="./public/styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="button-part">
+            <ul>
+                <li><button class="button-61">Show pictures</button></li>
+                <li><button class="button-61">Make pictures</button></li>
+                <li><button id="btn3" class="button-61">Today's log</button></li>
+            </ul>
+        </div>
+        <div id="hemorroid" class="content-part">
+
+        </div>
+        <div class="calendar-part">
+        </div>
+
+    </div>
+    <script>
+        btn3.onclick = function () {
+            window.location = "log.html";
+        };
+        window.onload = function () {
+            hemorroid.innerHTML = localStorage.getItem("log2023");
+            
+        };
+    </script>
+</body>
+
+</html>
